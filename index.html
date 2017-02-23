@@ -3,14 +3,15 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="shortcut icon" href="res/favicon.ico" type="image/x-icon" />
 
-		<title>reveal.js</title>
+		<title>CoffeeScript Presentation</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/beige.css">
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/beige.css">
+		<link rel="stylesheet" href="lib/css/zenburn.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -20,13 +21,38 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		
+		<link rel="stylesheet" href="my.css">
 	</head>
 	<body>
+
 		<div class="reveal">
+
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+
+				<section>
+					<div id="firstSlide">
+						<div>
+							<h1>CoffeeScript</h1>
+							<h3>The real tool to convert caffeine into code</h3>
+						</div>
+						<div id="imageFirstSlide">
+							<img class="myImage" src="res/coffeelogo.png">
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h1>What is it?</h1>
+					<p class="fragment"><i>It's just JavaScript</i></p>
+				</section>
+
+				<section data-transition="zoom">
+					<h2>BUT...</h2>
+					<p class="fragment">... exposing the good parts of JavaScript in a very simple way!</p> 
+				</section>
 			</div>
+
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
