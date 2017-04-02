@@ -1,54 +1,54 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<link rel="shortcut icon" href="res/favicon.ico" type="image/x-icon" />
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="shortcut icon" href="res/favicon.ico" type="image/x-icon" />
 
-		<title>TypeScript Presentation</title>
+	<title>TypeScript Presentation</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/beige.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/beige.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-		
-		<link rel="stylesheet" href="my.css">
-	</head>
-	<body>
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
 
-		<div class="reveal">
+	<link rel="stylesheet" href="my.css">
+</head>
+<body>
 
-			<div class="slides">
+	<div class="reveal">
 
-				<section>
-					<div id="firstSlide">
-						<div>
-							<h1>TypeScript</h1>
-							<h3>JavaScript that scales.</h3>
-							<h5>It is that simple.</h5>
-						</div>
-						<div id="imageFirstSlide">
-							<!--TODO Replace image-->
-							<img class="myImage" src="res/ts.png">
-						</div>
+		<div class="slides">
+
+			<section>
+				<div id="firstSlide">
+					<div>
+						<h1>TypeScript</h1>
+						<h3>JavaScript that scales.</h3>
+						<h5>It is that simple.</h5>
 					</div>
-				</section>
+					<div id="imageFirstSlide">
+						<!--TODO Replace image-->
+						<img class="myImage" src="res/ts.png">
+					</div>
+				</div>
+			</section>
 
 				<!--
 					******************************
 					*       Introduction         * 
 					******************************
-				 -->
+				-->
 				<!-- Context -->
 				<section>
 					<h1>What is it?</h1>
@@ -65,9 +65,9 @@
 
 				<!--
 					*************************************************************
-					*   Language characterisation / Code Examples / Snippets    * 
-					*************************************************************
-				 -->
+					*   Language characterisation / Code Examples / Snippets    *
+					************************************************************* 
+				-->
 				<!-- Characteristics -->
 				<!-- Advantages -->
 				<!-- Shortcomes -->
@@ -76,13 +76,95 @@
 					*************************************************************
 					*  How does the language fits in the Programming Paradigms  * 
 					*************************************************************
-				 -->
+				-->
+				<section>
+					<h1>TypeScript</h1><br>
+					<h4>vs</h4>
+					<h1>Programming Paradigms</h1>
+				</section>
 
+				<section>
+					<h3>TypeScrypt is a <u>Multi-Paradigm</u> language</h3>
+					<br>
+					<ul>
+						<li>Scripting</li>
+						<li>Object-Oriented</li>
+						<li>Strutured</li>
+						<li>Imperative</li>
+						<li>Functional</li>
+						<li>Generic</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Scripting</h2>
+					<pre><code data-trim data-noescape>
+						var aString: string = "Wow, look at this script";
+						function aFunction(message: string) {
+							console.log(this.genericString);
+						}
+					</code></pre>
+					<ul>
+						<li>Fast to learn and write</li>
+						<li>Simple syntax and semantics</li>
+						<li>Executed from start to finish</li>
+						<li>No explicit entry point (like a main() function)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Object-Oriented</h2>
+					<pre><code data-trim data-noescape>
+class Person {
+    private name: string;
+    private age: number;
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+}
+					</code></pre>
+
+					<p style="font-size: 28px">TypeScript is a <strong><i>class-based</i></strong> language: Objects are running instances of Classes.</p>
+					<p style="font-size: 28px">Concept of "objects", containing fields of data known as <strong>attributes</strong> and dedicated code procedures known as <strong>methods</strong>, that can be accessed or modified with the <strong>"this."</strong> prefix.</p>
+				</section>
+
+				<section>
+					<h2>Strutured & Imperative</h2>
+					<p>Aims to improve code Clarity and Quality as well as the Velocity of development, describing how the program must operate and behave, using</p>
+					<ul>
+						<li>SubRoutines</li>
+						<li>Block Structures</li>
+						<li>For and While-Loops</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Functional</h2>
+					<p>In a mathemetical perspective, calling the same function twice with the same parameters, should output the same result.</p>
+					<pre><code data-trim data-noescape>
+function add(x: number, y: number): number {
+    return x + y;
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Generic</h2>
+					<p>Code is written with types that are to be instantiated later (<i>templates</i>)</p>
+					<pre><code data-trim data-noescape>
+function printArraySize&ltT&gt(arg: Array&ltT&gt): Array&ltT&gt {
+    console.log(arg.length); 
+    return arg;
+}
+					</code></pre>
+				</section>
 				<!--
 					*************************************
 					*  Comparison with close languages  *
 					*************************************
-				 -->
+				-->
 				<!-- JavaScript -->
 				<!-- CoffeScript -->
 				<!-- Dart -->
@@ -91,22 +173,22 @@
 					*************************************************
 					*  Typical applications where it has been used  *
 					*************************************************
-				 -->
-				 <!-- Angular2 > Ionic2 -->
-				 <!-- JetBrains, Visual Studio -->
-				 <!-- https://www.typescriptlang.org/community/friends.html -->
+				-->
+				<!-- Angular2 > Ionic2 -->
+				<!-- JetBrains, Visual Studio -->
+				<!-- https://www.typescriptlang.org/community/friends.html -->
 
 				<!--
 					*************************************************
 					*  Bibliographic references (books and papers)  *
 					*************************************************
-				 -->
+				-->
 
  				<!--
 					*****************************************************
 					*  Tutorials and Web sites concerning the language  *
 					*****************************************************
-				 -->
+				-->
 			</div>
 
 		</div>
@@ -121,12 +203,12 @@
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
 		</script>
 	</body>
-</html>
+	</html>
