@@ -91,7 +91,7 @@
 						<li>Object-Oriented</li>
 						<li>Strutured</li>
 						<li>Imperative</li>
-						<li>Funtional</li>
+						<li>Functional</li>
 						<li>Generic</li>
 					</ul>
 				</section>
@@ -130,6 +130,36 @@ class Person {
 					<p style="font-size: 28px">Concept of "objects", containing fields of data known as <strong>attributes</strong> and dedicated code procedures known as <strong>methods</strong>, that can be accessed or modified with the <strong>"this."</strong> prefix.</p>
 				</section>
 
+				<section>
+					<h2>Strutured & Imperative</h2>
+					<p>Aims to improve code Clarity and Quality as well as the Velocity of development, describing how the program must operate and behave, using</p>
+					<ul>
+						<li>SubRoutines</li>
+						<li>Block Structures</li>
+						<li>For and While-Loops</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Functional</h2>
+					<p>In a mathemetical perspective, calling the same function twice with the same parameters, should output the same result.</p>
+					<pre><code data-trim data-noescape>
+function add(x: number, y: number): number {
+    return x + y;
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Generic</h2>
+					<p>Code is written with types that are to be instantiated later (<i>templates</i>)</p>
+					<pre><code data-trim data-noescape>
+function printArraySize&ltT&gt(arg: Array&ltT&gt): Array&ltT&gt {
+    console.log(arg.length); 
+    return arg;
+}
+					</code></pre>
+				</section>
 				<!--
 					*************************************
 					*  Comparison with close languages  *
