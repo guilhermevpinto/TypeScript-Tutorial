@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -15,15 +16,16 @@
 
 	<!-- Printing and PDF exports -->
 	<script>
-		var link = document.createElement( 'link' );
+		var link = document.createElement('link');
 		link.rel = 'stylesheet';
 		link.type = 'text/css';
-		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-		document.getElementsByTagName( 'head' )[0].appendChild( link );
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
 	</script>
 
 	<link rel="stylesheet" href="my.css">
 </head>
+
 <body>
 
 	<div class="reveal">
@@ -44,39 +46,40 @@
 				</div>
 			</section>
 
-				<!--
+			<!--
 					******************************
 					*       Introduction         * 
 					******************************
 				-->
-				<!-- Context -->
-				<section>
-					<h1>What is it?</h1>
-					<p class="fragment" data-fragment-index="1"><i>It's just JavaScript</i></p>
-					<h5 class="fragment" data-fragment-index="2"><i>But better!</i></h5>
-				</section>
+			<!-- Context -->
+			<section>
+				<h1>What is it?</h1>
+				<p class="fragment" data-fragment-index="1"><i>It's just JavaScript</i></p>
+				<h5 class="fragment" data-fragment-index="2"><i>But better!</i></h5>
+			</section>
 
-				<!-- History -->
+			<!-- History -->
 
-				<section data-transition="zoom">
-					<h2>BUT...</h2>
-					<p class="fragment">... exposing the good parts of JavaScript in a very simple way!</p> 
-				</section>
+			<section data-transition="zoom">
+				<h2>BUT...</h2>
+				<p class="fragment">... exposing the good parts of JavaScript in a very simple way!</p>
+			</section>
 
-				<!--
+			<!--
 					*************************************************************
 					*   Language characterisation / Code Examples / Snippets    *
 					************************************************************* 
 				-->
-				<!-- Characteristics -->
-				<!-- Advantages -->
-				<!-- Shortcomes -->
+			<!-- Characteristics -->
+			<!-- Advantages -->
+			<!-- Shortcomes -->
 
-				<!--
+			<!--
 					*************************************************************
 					*  How does the language fits in the Programming Paradigms  * 
 					*************************************************************
 				-->
+			<section>
 				<section>
 					<h1>TypeScript</h1><br>
 					<h4>vs</h4>
@@ -84,7 +87,8 @@
 				</section>
 
 				<section>
-					<h3>TypeScrypt is a <u>Multi-Paradigm</u> language</h3>
+					<h3>TypeScrypt is a
+						<u>Multi-Paradigm</u> language</h3>
 					<br>
 					<ul>
 						<li>Scripting</li>
@@ -127,12 +131,14 @@ class Person {
 					</code></pre>
 
 					<p style="font-size: 28px">TypeScript is a <strong><i>class-based</i></strong> language: Objects are running instances of Classes.</p>
-					<p style="font-size: 28px">Concept of "objects", containing fields of data known as <strong>attributes</strong> and dedicated code procedures known as <strong>methods</strong>, that can be accessed or modified with the <strong>"this."</strong> prefix.</p>
+					<p style="font-size: 28px">Concept of "objects", containing fields of data known as <strong>attributes</strong> and dedicated code procedures known
+						as <strong>methods</strong>, that can be accessed or modified with the <strong>"this."</strong> prefix.</p>
 				</section>
 
 				<section>
 					<h2>Strutured & Imperative</h2>
-					<p>Aims to improve code Clarity and Quality as well as the Velocity of development, describing how the program must operate and behave, using</p>
+					<p>Aims to improve code Clarity and Quality as well as the Velocity of development, describing how the program must operate
+						and behave, using</p>
 					<ul>
 						<li>SubRoutines</li>
 						<li>Block Structures</li>
@@ -160,55 +166,57 @@ function printArraySize&ltT&gt(arg: Array&ltT&gt): Array&ltT&gt {
 }
 					</code></pre>
 				</section>
-				<!--
+			</section>
+			<!--
 					*************************************
 					*  Comparison with close languages  *
 					*************************************
 				-->
-				<!-- JavaScript -->
-				<!-- CoffeScript -->
-				<!-- Dart -->
+			<!-- JavaScript -->
+			<!-- CoffeScript -->
+			<!-- Dart -->
 
-				<!--
+			<!--
 					*************************************************
 					*  Typical applications where it has been used  *
 					*************************************************
 				-->
-				<!-- Angular2 > Ionic2 -->
-				<!-- JetBrains, Visual Studio -->
-				<!-- https://www.typescriptlang.org/community/friends.html -->
+			<!-- Angular2 > Ionic2 -->
+			<!-- JetBrains, Visual Studio -->
+			<!-- https://www.typescriptlang.org/community/friends.html -->
 
-				<!--
+			<!--
 					*************************************************
 					*  Bibliographic references (books and papers)  *
 					*************************************************
 				-->
 
- 				<!--
+			<!--
 					*****************************************************
 					*  Tutorials and Web sites concerning the language  *
 					*****************************************************
 				-->
-			</div>
-
 		</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+	</div>
 
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				history: true,
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
+	<script>
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			history: true,
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [
 				{ src: 'plugin/markdown/marked.js' },
 				{ src: 'plugin/markdown/markdown.js' },
 				{ src: 'plugin/notes/notes.js', async: true },
-				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
-	</html>
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
+</body>
+
+</html>
