@@ -165,6 +165,94 @@ function printArraySize&ltT&gt(arg: Array&ltT&gt): Array&ltT&gt {
 					*  Comparison with close languages  *
 					*************************************
 				-->
+
+				<section>
+					<h1 style="font-size: 150px">Comparison with close languages</h1>
+				</section>
+
+				<section>
+					<h1 style="font-size: 80px">JavaScript...</h1>
+					<p>As we already know, TypeScript is a superset of JavaScript, providing optional static typing, classes and interfaces.</p>
+					<p>It also benefits IDE's to develop a consistent debugging environment.</p>
+					<p>And so, we can point that it is a better choice when developping larger software systems, being deployable where a regular JavaScript application would run.</p>
+				</section>
+
+				<section>
+					<h1 style="font-size: 80px">... There is also CoffeeScript...</h1>
+					<p>It focuses on other aspects, providing mainly code readability for developers.</p>
+					<p><strong>However</strong>, TypeScript also provides good readability for tools through its optional static typing.</p>
+				</section>
+
+				<section>
+					<h1 style="font-size: 50px">TypeScript</h1>
+					<pre><code style="max-height: 700px">
+class User {
+ private id: number;
+ private firstName: string;
+ private lastName: string;
+
+ constructor(id: number, firstName: string, lastName: string) {
+	this.id = id;
+	this.firstName = firstName;
+	this.lastName = lastName;
+ }
+ getId() {
+	return this.id;
+ }
+ getFirstName() {
+	return this.firstName;
+ }
+ getLastName() {
+ 	return this.lastName;
+ }
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h1 style="font-size: 50px">CoffeeScript</h1>
+					<pre><code style="max-height: 700px">
+class User
+ constructor (@id, firstName, @lastName) ->
+
+ getId: -> @id
+
+ getFirstName: -> @firstName
+
+ getLastName: -> @lastName
+					</code></pre>
+				</section>
+
+				<section>
+					<h1 style="font-size: 50px">JavaScript</h1>
+					
+					<div id="firstSlide">
+					<div>
+						<pre><code style="max-height: 700px">
+function User(id, firstName, lastName) {
+ this.id = id;
+ this.firstName = firstName;
+ this.lastName = lastName;
+}
+User.prototype = {
+ getId: function() {
+	return this.id;
+ }
+ getFirstName: function() {
+	return this.firstName;
+ }
+ getLastName: function() {
+ 	return this.lastName;
+ }
+}
+						</code></pre>
+					</div>
+					<div id="imageFirstSlide">
+						<!--TODO Replace image-->
+						<img class="myImage" src="res/FullPanel.png">
+					</div>
+				</div>
+				</section>
 				<!-- JavaScript -->
 				<!-- CoffeScript -->
 				<!-- Dart -->
