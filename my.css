@@ -1,8 +1,8 @@
-#firstSlide {
+#slide {
     display: flex;
 }
 
-#imageFirstSlide {
+#image {
     justify-content: flex-end;
 }
 
@@ -10,4 +10,5 @@
     border: none;
     box-shadow: none;
 }
+
 

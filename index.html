@@ -33,13 +33,13 @@
 		<div class="slides">
 
 			<section>
-				<div id="firstSlide">
-					<div>
+				<div id="slide">
+					<div style="flex-grow: 2">
 						<h1>TypeScript</h1>
 						<h3>JavaScript that scales.</h3>
 						<h5>It is that simple.</h5>
 					</div>
-					<div id="imageFirstSlide">
+					<div id="image" style="flex-grow: 1">
 						<!--TODO Replace image-->
 						<img class="myImage" src="res/ts.png">
 					</div>
@@ -52,6 +52,7 @@
 					******************************
 				-->
 			<!-- Context -->
+			<section data-transition="zoom">
 				<section>
 					<h1>What is it?</h1>
 					<a class="fragment" data-fragment-index="1"><i>It's just JavaScript</i></a>
@@ -96,10 +97,11 @@
 					<h2>Components of TypeScript</h2>
 					<img src="https://www.tutorialspoint.com/typescript/images/typescript_components.jpg" width="40%">
 				</section>
+			</section>
 
 			<!-- History -->
-				<section data-transition="zoom">
-					
+			<section data-transition="zoom">
+				<section>
 					<h5>Before we know more about this awesome language</h5>
 					<h2 class="fragment" data-fragment-index="1">Some history</h2>
 				</section>
@@ -144,6 +146,7 @@ function identity<T>(arg: T): T {
 					<h3>Java</h3>
 					<h3>C#</h3>
 				</section>
+			</section>
 
 			<!--
 					*************************************************************
@@ -153,6 +156,7 @@ function identity<T>(arg: T): T {
 			<!-- Characteristics -->
 			<!-- Advantages -->
 			<!-- Shortcomes -->
+			<section data-transition="zoom">
 			<section>
 				<h1>Architectural Overview</h1>
 				<img class="myImage" src="https://raw.githubusercontent.com/wiki/Microsoft/TypeScript/images/architecture.png">
@@ -619,7 +623,7 @@ create(false); // Error
 create(undefined); // Error
 					</code></pre>
 				</section>
-
+			</section>
 
 			<!--
 					*************************************************************
@@ -627,6 +631,7 @@ create(undefined); // Error
 					*************************************************************
 				-->
 				<section data-transition="zoom">
+				<section>
 					<h1>TypeScript</h1><br>
 					<h4>vs</h4>
 					<h1>Programming Paradigms</h1>
@@ -712,6 +717,7 @@ function printArraySize&ltT&gt(arg: Array&ltT&gt): Array&ltT&gt {
 }
 					</code></pre>
 				</section>
+			</section>
 			<!--
 					*************************************
 					*  Comparison with close languages  *
@@ -723,23 +729,51 @@ function printArraySize&ltT&gt(arg: Array&ltT&gt): Array&ltT&gt {
 				</section>
 
 				<section>
-					<h1 style="font-size: 80px">JavaScript...</h1>
-					<p>As we already know, TypeScript is a superset of JavaScript, providing optional static typing, classes and interfaces.</p>
-				</section>
+					<section>
+						<h1 style="font-size: 80px">JavaScript...</h1>
+						<div id="slide">
+							<div>
+								<p>As we already know, TypeScript is a superset of JavaScript, providing <span class="fragment">optional static typing</span><span class="fragment">, classes</span><span class="fragment"> and interfaces.</span></p>
+							</div>	
+							<div id="image">
+								<img src="res/js.png" style="width: 650px; margin-top: 0px">
+							</div>
+						</div>
+					</section>
 
-				<section>
-					<p>It also benefits IDE's to develop a consistent debugging environment.</p>
-				</section>
+					<section>
+						<div style="justify-content: center">
+							<img src="res/vs.png" style="width: 150px">
+						</div>
+						<p>It also benefits IDE's to develop a consistent debugging environment.</p>
+						<div style="display: flex;flex-direction: row">
+							<div style="flex-grow: 1;"><img src="res/atom.png" style="width: 150px;"></div>
+							<div style="flex-grow: 1;"><img src="res/wbstorm.png" style="width: 250px;"></div>
+						</div>
+					</section>
 
-				<section>
-					<p>And so, we can point that it is a better choice when developping larger software systems, being deployable where a regular
-						JavaScript application would run.</p>
+					<section>
+						<p>And so, we can conclude that it is a better choice when developping larger software systems, being deployable where a regular
+							JavaScript application would run.</p>
+					</section>
 				</section>
 
 				<section>
 					<h1 style="font-size: 80px">... There is also CoffeeScript...</h1>
-					<p>It focuses on other aspects, providing mainly code readability for developers.</p>
-					<p><strong>However</strong>, TypeScript also provides good readability for tools through its optional static typing.</p>
+					<div id="slide">
+							<div>
+								<p>It focuses on other aspects, providing mainly code readability for developers.</p>
+								<p class="fragment"><strong>However</strong>, TypeScript also provides good readability for tools through its optional static typing.</p>
+							</div>	
+							<div id="image">
+								<img src="res/coffeelogo.png" style="width: 650px; margin-top: 0px">
+							</div>
+						</div>
+				</section>
+
+				<section>
+					<h1 style="font-size: 100px">Let's look at some code snippets!</h1>
+					<img src="res/typing.gif" style="width: 650px; margin-top: 0px">
 				</section>
 
 				<section>
@@ -772,7 +806,7 @@ class User {
 					<h1 style="font-size: 50px">CoffeeScript</h1>
 					<pre><code style="max-height: 700px">
 class User
- constructor (@id, firstName, @lastName) ->
+ constructor (@id, @firstName, @lastName) ->
 
  getId: -> @id
 
@@ -785,7 +819,7 @@ class User
 				<section>
 					<h1 style="font-size: 50px">JavaScript</h1>
 
-					<div id="firstSlide">
+					<div id="slide">
 						<div>
 							<pre><code style="max-height: 700px">
 function User(id, firstName, lastName) {
@@ -806,17 +840,70 @@ User.prototype = {
 }
 						</code></pre>
 						</div>
-						<div id="imageFirstSlide">
+						<div id="image">
 							<!--TODO Replace image-->
 							<img class="myImage" src="res/FullPanel.png">
 						</div>
 					</div>
 				</section>
 
+				<section data-transition="concave">
+					<section>
+						<h1>Dart</h1>
+						<div style="display: flex;flex-direction: row">
+							<div style="flex-grow: 1;"><img src="res/dart.png" style="width: 180px;"></div>
+							<div style="flex-grow: 1;"><img src="res/google.png" style="width: 150px;"></div>
+						</div>
+					</section>
+
+					<section>
+						<h1 style="font-size:100px">It's not only developed by Google but also is</h1>
+						<h2 style="font-size:50px" class="fragment"><i>Open-Source!</i></h2>
+						<h2 style="font-size:50px" class="fragment"><i>Scalable!!</i></h2>
+						<h2 style="font-size:50px" class="fragment"><i>Object-Oriented!!!</i></h2>
+					</section>
+
+					<section>
+						<h2>Great for building</h2>
+						<ul>
+							<li>Web applications</li>
+							<li>Server applications</li>
+							<li>Mobile applications</li>
+						</ul>
+						<p></p>
+						<h1 class="fragment" style="font-size: 50px">Yes. Google developed it! :)</h1>
+					</section>
+
+					<section>
+						<pre><code style="max-height: 700px">
+class User {
+ private id: number;
+ private firstName: string;
+ private lastName: string;
+
+ constructor(id: number, firstName: string, lastName: string) {
+	this.id = id;
+	this.firstName = firstName;
+	this.lastName = lastName;
+ }
+ getId() {
+	return this.id;
+ }
+ getFirstName() {
+	return this.firstName;
+ }
+ getLastName() {
+ 	return this.lastName;
+ }
+}
+						</code></pre>
+					</section>
+				</section>
+
 			<!--
-					*************************************************
-					*  Typical applications where it has been used  *
-					*************************************************
+				*************************************************
+				*  Typical applications where it has been used  *
+				*************************************************
 				-->
 			<!-- Angular2 > Ionic2 -->
 			<!-- JetBrains, Visual Studio -->
