@@ -309,6 +309,8 @@ else {
     console.log(x.innerHTML);
 }
 					</code></pre>
+				</section>
+				<section>	
 					<h3 class="fragment" data-fragment-index="1">instanceof</h3>
 					<p class="fragment" data-fragment-index="1">To test classes and union types</p>
 					<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
@@ -631,7 +633,7 @@ create(undefined); // Error
 					*************************************************************
 					*  How does the language fits in the Programming Paradigms  * 
 					*************************************************************
-				-->
+			-->
 				<section data-transition="zoom">
 				<section>
 					<h1>TypeScript</h1><br>
@@ -726,38 +728,37 @@ function printArraySize&ltT&gt(arg: Array&ltT&gt): Array&ltT&gt {
 					*************************************
 				-->
 
-				<section data-transition="zoom">
+			<section data-transition="zoom">
+				<section>
 					<h1 style="font-size: 150px">Comparison with close languages</h1>
 				</section>
 
 				<section>
-					<section>
-						<h1 style="font-size: 80px">JavaScript...</h1>
-						<div id="slide">
-							<div>
-								<p>As we already know, TypeScript is a superset of JavaScript, providing <span class="fragment">optional static typing</span><span class="fragment">, classes</span><span class="fragment"> and interfaces.</span></p>
-							</div>	
-							<div id="image">
-								<img src="res/js.png" style="width: 650px; margin-top: 0px">
-							</div>
+					<h1 style="font-size: 80px">JavaScript...</h1>
+					<div id="slide">
+						<div>
+							<p>As we already know, TypeScript is a superset of JavaScript, providing <span class="fragment">optional static typing</span><span class="fragment">, classes</span><span class="fragment"> and interfaces.</span></p>
+						</div>	
+						<div id="image">
+							<img src="res/js.png" style="width: 650px; margin-top: 0px">
 						</div>
-					</section>
+					</div>
+				</section>
 
-					<section>
-						<div style="justify-content: center">
-							<img src="res/vs.png" style="width: 150px">
-						</div>
-						<p>It also benefits IDE's to develop a consistent debugging environment.</p>
-						<div style="display: flex;flex-direction: row">
-							<div style="flex-grow: 1;"><img src="res/atom.png" style="width: 150px;"></div>
-							<div style="flex-grow: 1;"><img src="res/wbstorm.png" style="width: 250px;"></div>
-						</div>
-					</section>
+				<section>
+					<div style="justify-content: center">
+						<img src="res/vs.png" style="width: 150px">
+					</div>
+					<p>It also benefits IDE's to develop a consistent debugging environment.</p>
+					<div style="display: flex;flex-direction: row">
+						<div style="flex-grow: 1;"><img src="res/atom.png" style="width: 150px;"></div>
+						<div style="flex-grow: 1;"><img src="res/wbstorm.png" style="width: 250px;"></div>
+					</div>
+				</section>
 
-					<section>
-						<p>And so, we can conclude that it is a better choice when developping larger software systems, being deployable where a regular
-							JavaScript application would run.</p>
-					</section>
+				<section>
+					<p>And so, we can conclude that it is a better choice when developping larger software systems, being deployable where a regular
+						JavaScript application would run.</p>
 				</section>
 
 				<section>
@@ -850,57 +851,63 @@ User.prototype = {
 				</section>
 
 				<section data-transition="concave">
-					<section>
-						<h1>Dart</h1>
-						<div style="display: flex;flex-direction: row">
-							<div style="flex-grow: 1;"><img src="res/dart.png" style="width: 180px;"></div>
-							<div style="flex-grow: 1;"><img src="res/google.png" style="width: 150px;"></div>
-						</div>
-					</section>
-
-					<section>
-						<h1 style="font-size:100px">It's not only developed by Google but also is</h1>
-						<h2 style="font-size:50px" class="fragment"><i>Open-Source!</i></h2>
-						<h2 style="font-size:50px" class="fragment"><i>Scalable!!</i></h2>
-						<h2 style="font-size:50px" class="fragment"><i>Object-Oriented!!!</i></h2>
-					</section>
-
-					<section>
-						<h2>Great for building</h2>
-						<ul>
-							<li>Web applications</li>
-							<li>Server applications</li>
-							<li>Mobile applications</li>
-						</ul>
-						<p></p>
-						<h1 class="fragment" style="font-size: 50px">Yes. Google developed it! :)</h1>
-					</section>
-
-					<section>
-						<pre><code style="max-height: 700px">
-class User {
- private id: number;
- private firstName: string;
- private lastName: string;
-
- constructor(id: number, firstName: string, lastName: string) {
-	this.id = id;
-	this.firstName = firstName;
-	this.lastName = lastName;
- }
- getId() {
-	return this.id;
- }
- getFirstName() {
-	return this.firstName;
- }
- getLastName() {
- 	return this.lastName;
- }
-}
-						</code></pre>
-					</section>
+					<h1>Dart</h1>
+					<div style="display: flex;flex-direction: row">
+						<div style="flex-grow: 1;"><img src="res/dart.png" style="width: 180px;"></div>
+						<div style="flex-grow: 1;"><img src="res/google.png" style="width: 150px;"></div>
+					</div>
 				</section>
+
+				<section>
+					<h1 style="font-size:100px">It's not only developed by Google but also is</h1>
+					<h2 style="font-size:50px" class="fragment"><i>Open-Source!</i></h2>
+					<h2 style="font-size:50px" class="fragment"><i>Scalable!!</i></h2>
+					<h2 style="font-size:50px" class="fragment"><i>Object-Oriented!!!</i></h2>
+				</section>
+
+				<section>
+					<h2>Great for building</h2>
+					<ul>
+						<li>Web applications</li>
+						<li>Server applications</li>
+						<li>Mobile applications</li>
+					</ul>
+					<p></p>
+					<h1 class="fragment" style="font-size: 50px">Yes. Google developed it! :)</h1>
+				</section>
+
+				<section>
+					<pre><code style="max-height: 700px">
+class Spacecraft {
+  String name;
+  DateTime launchDate;
+  int launchYear;
+  // Default constructor
+  Spacecraft(this.name, this.launchDate) {
+    // Pretend the following is something you'd actually want to run in
+    // a constructor.
+    launchYear = launchDate?.year;
+  }
+  // Named constructor that forwards to the default one.
+  Spacecraft.unlaunched(String name) : this(name, null);
+  // Method.
+  void describe() {
+    print('Spacecraft: $name');
+    if (launchDate != null) {
+      int years = new DateTime.now().difference(launchDate).inDays ~/ 365;
+      print('Launched: $launchYear ($years years ago)');
+    } else {
+      print('Unlaunched');
+    }
+  }
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<img src="res/ts.png">
+				</section>
+			</section>
 
 			<!--
 				*************************************************
@@ -911,81 +918,84 @@ class User {
 			<!-- JetBrains, Visual Studio -->
 			<!-- https://www.typescriptlang.org/community/friends.html -->
 				<section data-transition="zoom">
-					<h1>Where it has been used?</h1>
-					<h3>Typical applications</h3>
-				</section>
+					<section>
+						<h1>Where it has been used?</h1>
+						<h3>Typical applications</h3>
+					</section>
 
-				<section>
-					<h1 style="font-size: 80px">Frameworks</h1>
-					<p>TypeScript is the core language of Angular 2, a complete new version of Angular, better structured, considers mobile
-						development (IONIC 2) and increases performance on both applications execution and development speed.</p>
-				</section>
+					<section>
+						<h1 style="font-size: 80px">Frameworks</h1>
+						<p>TypeScript is the core language of Angular 2, a complete new version of Angular, better structured, considers mobile
+							development (IONIC 2) and increases performance on both applications execution and development speed.</p>
+					</section>
 
-				<section>
-					<h1 style="font-size: 80px">IDE's</h1>
-					<p>The optional static typing of Typescript, as already mentioned before, contributes to great debugging during development.
-						Visual Studio IDE's, WebStorm and many other text editors already handle some tools that improve the experience of
-						a developer when writting TypeScript applications.</p>
-				</section>
+					<section>
+						<h1 style="font-size: 80px">IDE's</h1>
+						<p>The optional static typing of Typescript, as already mentioned before, contributes to great debugging during development.
+							Visual Studio IDE's, WebStorm and many other text editors already handle some tools that improve the experience of
+							a developer when writting TypeScript applications.</p>
+					</section>
 
-				<section>
-					<h1 style="font-size: 80px">A Widely Known Application</h1>
-					<img class="fragment" data-fragment-index="1" class="myImage" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Visual_Studio_Code_0.10.1_icon.png">
+					<section>
+						<h1 style="font-size: 80px">A Widely Known Application Developed With Typescript</h1>
+						<img class="fragment" data-fragment-index="1" class="myImage" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Visual_Studio_Code_0.10.1_icon.png">
+					</section>
 				</section>
-
 			<!--
 					*****************
 					*  Get Started  *
 					*****************
 				-->
 				<section data-transition="zoom">
-					<h1>Get Started</h1>
-					<h3>You know have the full knowledge to do awesome work</h3>
-				</section>
+					<section>
+						<h1>Get Started</h1>
+						<h3>You know have the full knowledge to do awesome work</h3>
+					</section>
 
-				<section>
-					<h2>First try online</h2>
-					<a href="https://www.typescriptlang.org/play/">
-						<img class="myImage" src="https://www.tutorialspoint.com/typescript/images/typescript_online_test.jpg" width="80%">
-					</a>
-				</section>
+					<section>
+						<h2>First try online</h2>
+						<a href="https://www.typescriptlang.org/play/">
+							<img class="myImage" src="https://www.tutorialspoint.com/typescript/images/typescript_online_test.jpg" width="80%">
+						</a>
+					</section>
 
-				<section>
-					<h2>Download and Install</h2>
-					<a href="https://nodejs.org">
-						<img class="myImage" src="http://thisdavej.com/wp-content/uploads/2016/02/nodejs-logo.png" width="80%">
-					</a>
-				</section>
+					<section>
+						<h2>Download and Install</h2>
+						<a href="https://nodejs.org">
+							<img class="myImage" src="http://thisdavej.com/wp-content/uploads/2016/02/nodejs-logo.png" width="80%">
+						</a>
+					</section>
 
-				<section>
-					<h2>Install TypeScript</h2>
-					<pre><code style="max-height: 700px">
+					<section>
+						<h2>Install TypeScript</h2>
+						<pre><code style="max-height: 700px">
 npm install -g typescript
-						</code></pre>
-				</section>
+							</code></pre>
+					</section>
 
-				<section>
-					<h2>Grab a sweet code editor</h2>
-					<img class="myImage" src="res/CodeEditors.png">
-					<p>We recommend <a href="https://code.visualstudio.com">Visual Studio Code</a></p>
-				</section>
+					<section>
+						<h2>Grab a sweet code editor</h2>
+						<img class="myImage" src="res/CodeEditors.png">
+						<p>We recommend <a href="https://code.visualstudio.com">Visual Studio Code</a></p>
+					</section>
 
-				<section>
-					<h2><a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html">Compile TypeScript</a></h2>
-					<pre><code style="max-height: 700px">
+					<section>
+						<h2><a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html">Compile TypeScript</a></h2>
+						<pre><code style="max-height: 700px">
 tsc helloworld.ts
-						</code></pre>
-				</section>
+							</code></pre>
+					</section>
 
-				<section>
-					<img class="myImage" src="http://www.virtualspeechcoach.com/wp-content/uploads/2013/09/Keep-Calm-Expert.jpg">
-				</section>
+					<section>
+						<img class="myImage" src="http://www.virtualspeechcoach.com/wp-content/uploads/2013/09/Keep-Calm-Expert.jpg">
+					</section>
 
-				<section>
-					<h2>Choose a trending open source TypeScript project</h2>
-					<a href="https://github.com/trending/typescript?since=daily">
-						<img class="myImage" src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png">
-					</a>
+					<section>
+						<h2>Choose a trending open source TypeScript project</h2>
+						<a href="https://github.com/trending/typescript?since=daily">
+							<img class="myImage" src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png">
+						</a>
+					</section>
 				</section>
 
 			<!--
