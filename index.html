@@ -251,13 +251,13 @@ interface RunOptions {
    program: string;
    commandline: string[]|string|(() => string);
 }
-					</code></pre>
-					<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
+				</code></pre>
+				<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
 var opts: RunOptions = /* ... */;
 opts.commandline = '-hello world'; // OK
 opts.commandline = ['-hello', 'world']; // OK
 opts.commandline = [42]; // Error, number is not string or string[]
-					</code></pre>
+						</code></pre>
 				</section>
 
 				<section>
@@ -279,27 +279,27 @@ var e = equal(42, 'hello');
 var x = [1, 'hello']; // x: Array<string|number>
 x[0] = 'world'; // OK
 x[0] = false; // Error, boolean is not string or number
-					</code></pre>
-				</section>
+						</code></pre>
+					</section>
 
-				<section>
-					<h2>Template strings</h2>
-					<pre><code data-trim data-noescape>
+					<section>
+						<h2>Template strings</h2>
+						<pre><code data-trim data-noescape>
 var name = "TypeScript";
 var greeting  = `Hello, ${name}! Your name has ${name.length} characters`;
-					</code></pre>
-					<p class="fragment" data-fragment-index="1">Which compiles to</p>
-					<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
+						</code></pre>
+						<p class="fragment" data-fragment-index="1">Which compiles to</p>
+						<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
 var name = "TypeScript!";
 var greeting = "Hello, " + name + "! Your name has " + name.length + " characters";
-					</code></pre>
-				</section>
+						</code></pre>
+					</section>
 
-				<section>
-					<h2>Type Guards</h2>
-					<h3>typeof</h3>
-					<p>To test variables</p>
-					<pre><code data-trim data-noescape>
+					<section>
+						<h2>Type Guards</h2>
+						<h3>typeof</h3>
+						<p>To test variables</p>
+						<pre><code data-trim data-noescape>
 var x: string | HTMLElement = /* ... */;
 if(typeof x === 'string') {
     // x is string here, as shown above
@@ -308,73 +308,74 @@ else {
     // x is HTMLElement here
     console.log(x.innerHTML);
 }
-					</code></pre>
-				</section>
-				<section>	
-					<h3 class="fragment" data-fragment-index="1">instanceof</h3>
-					<p class="fragment" data-fragment-index="1">To test classes and union types</p>
-					<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
+						</code></pre>
+					</section>
+
+					<section>	
+						<h3 class="fragment" data-fragment-index="1">instanceof</h3>
+						<p class="fragment" data-fragment-index="1">To test classes and union types</p>
+						<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
 class Dog { woof() { } }
 class Cat { meow() { } }
 var pet: Dog|Cat = /* ... */;
 if (pet instanceof Dog) {
     pet.woof(); // OK
 }
-					</code></pre>
-				</section>
+						</code></pre>
+					</section>
 
-				<section>
-					<h3>let declarations</h3>
-					<h3>const declarations</h3>
-					<h3>const enum declarations</h3>
-				</section>
+					<section>
+						<h3>let declarations</h3>
+						<h3>const declarations</h3>
+						<h3>const enum declarations</h3>
+					</section>
 
-				<section data-transition="concave">
-					<h1>TypeScript 1.5</h1>
-				</section>
+					<section data-transition="concave">
+						<h1>TypeScript 1.5</h1>
+					</section>
 
-				<section>
-					<h2>ES6 Modules</h2>
-				</section>
+					<section>
+						<h2>ES6 Modules</h2>
+					</section>
 
-				<section>
-					<h2>Export Declarations</h2>
-					<pre><code data-trim data-noescape>
+					<section>
+						<h2>Export Declarations</h2>
+						<pre><code data-trim data-noescape>
 interface Stream { ... }
 function writeToStream(stream: Stream, data: string) { ... }
 export { Stream, writeToStream as write };  // writeToStream exported as write
-					</code></pre>
-					<pre><code data-trim data-noescape>
+						</code></pre>
+						<pre><code data-trim data-noescape>
 import { read, write, standardOutput as stdout } from "./inout";
 var s = read(stdout);
 write(stdout, s);
-					</code></pre>
-					<pre><code data-trim data-noescape>
+						</code></pre>
+						<pre><code data-trim data-noescape>
 import * as io from "./inout";
 var s = io.read(io.standardOutput);
 io.write(io.standardOutput, s);
-					</code></pre>
-				</section>
+						</code></pre>
+					</section>
 
-				<section>
-					<h2>namespace keyword</h2>
-					<pre><code data-trim data-noescape>
+					<section>
+						<h2>namespace keyword</h2>
+						<pre><code data-trim data-noescape>
 namespace Math {
     export function add(x, y) { ... }
 }
-					</code></pre>
-				</section>
+						</code></pre>
+					</section>
 
-				<section>
-					<h2>for..of support</h2>
-					<pre><code data-trim data-noescape>
+					<section>
+						<h2>for..of support</h2>
+						<pre><code data-trim data-noescape>
 for (var v of expr) { }
-					</code></pre>
-				</section>
+						</code></pre>
+					</section>
 
-				<section>
-					<h2>Decorators</h2>
-					<pre><code data-trim data-noescape>
+					<section>
+						<h2>Decorators</h2>
+						<pre><code data-trim data-noescape>
 function f() {
     console.log("f(): evaluated");
     return function (target, propertyKey: string, descriptor: PropertyDescriptor) {
@@ -394,18 +395,18 @@ class C {
     @g()
     method() {}
 }
-					</code></pre>
-					<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
+						</code></pre>
+						<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
 f(): evaluated
 g(): evaluated
 g(): called
 f(): called
-					</code></pre>
-				</section>
+						</code></pre>
+					</section>
 
-				<section>
-					<h2>Computed properties</h2>
-					<pre><code data-trim data-noescape>
+					<section>
+						<h2>Computed properties</h2>
+						<pre><code data-trim data-noescape>
 function makeNode(name: string, initialNeighbor: Node): Node {
     return {
         name: name,
@@ -729,11 +730,12 @@ function printArraySize&ltT&gt(arg: Array&ltT&gt): Array&ltT&gt {
 				-->
 
 			<section data-transition="zoom">
+
 				<section>
 					<h1 style="font-size: 150px">Comparison with close languages</h1>
 				</section>
 
-				<section>
+				<section  data-transition="concave">
 					<h1 style="font-size: 80px">JavaScript...</h1>
 					<div id="slide">
 						<div>
@@ -759,9 +761,10 @@ function printArraySize&ltT&gt(arg: Array&ltT&gt): Array&ltT&gt {
 				<section>
 					<p>And so, we can conclude that it is a better choice when developping larger software systems, being deployable where a regular
 						JavaScript application would run.</p>
+						<img src="res/memeJS.jpg">
 				</section>
 
-				<section>
+				<section data-transition="concave">
 					<h1 style="font-size: 80px">... There is also CoffeeScript...</h1>
 					<div id="slide">
 							<div>
@@ -905,8 +908,136 @@ class Spacecraft {
 				</section>
 
 				<section>
-					<img src="res/ts.png">
+					<div style="display: flex;flex-direction: row">
+						<div style="flex-grow: 1;"><img src="res/ts.png" style="width: 160px"></div>
+						<div style="flex-grow: 1;"><img src="res/dart.png" style="width: 200px"></div>
+					</div>
+
+					<h1 style="font-size: 200px">???</h1>
+
+					<div class="fragment" style="display: flex;flex-direction: row">
+						<div style="flex-grow: 1;"><img src="res/microsoft.png" style="width: 250px"></div>
+						<div style="flex-grow: 1;"><img src="res/googleFull.png" style="width: 200px"></div>
+					</div>
+					
 				</section>
+
+				<section data-transiction="concave">
+					<h1>Some Benchmarks</h1>
+				</section>
+
+				<section>
+					<h2>Regex-Redux</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Language</th>
+								<th>Speed</th>
+								<th>Memory</th>
+								<th>CPU Load</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>TypeScript</td>
+								<td><strong>4.20</strong></td>
+								<td>650 072</td>
+								<td>4.20</td>
+							</tr>
+							<tr>
+								<td>Dart</td>
+								<td>31.42</td>
+								<td>469 528</td>
+								<td>33.79</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section>
+					<h2>Reverse-Complement</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Language</th>
+								<th>Speed</th>
+								<th>Memory</th>
+								<th>CPU Load</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>TypeScript</td>
+								<td><strong>3.67</strong></td>
+								<td>245 580</td>
+								<td>3.94</td>
+							</tr>
+							<tr>
+								<td>Dart</td>
+								<td>22.98</td>
+								<td>1 728 640</td>
+								<td>28.28</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section>
+					<h2>Binary-Trees</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Language</th>
+								<th>Speed</th>
+								<th>Memory</th>
+								<th>CPU Load</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>TypeScript</td>
+								<td>50.94</td>
+								<td>929 308</td>
+								<td>51.76</td>
+							</tr>
+							<tr>
+								<td>Dart</td>
+								<td><strong>42.11</strong></td>
+								<td>486 740</td>
+								<td>56.27</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section>
+					<h2>Mandelbrot</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Language</th>
+								<th>Speed</th>
+								<th>Memory</th>
+								<th>CPU Load</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>TypeScript</td>
+								<td>50.93</td>
+								<td>367 612</td>
+								<td>50.86</td>
+							</tr>
+							<tr>
+								<td>Dart</td>
+								<td><strong>1.61</strong></td>
+								<td>70 548</td>
+								<td>4.08</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
 			</section>
 
 			<!--
@@ -925,20 +1056,33 @@ class Spacecraft {
 
 					<section>
 						<h1 style="font-size: 80px">Frameworks</h1>
-						<p>TypeScript is the core language of Angular 2, a complete new version of Angular, better structured, considers mobile
-							development (IONIC 2) and increases performance on both applications execution and development speed.</p>
+						<p>Core language of Angular 2, a complete new Angular, better <strong>structured</strong>, considers <strong>mobile
+							development</strong>and <strong>increases <i>performance </i></strong>on both applications execution and development speed.</p>
+						<div style="display: flex;flex-direction: row">
+							<div style="flex-grow: 1;"><img src="res/angular.png" style="width: 160px"></div>
+							<div style="flex-grow: 1;"><img src="res/ionic.png" style="padding-top:50px; width: 200px"></div>
+						</div>
 					</section>
 
 					<section>
 						<h1 style="font-size: 80px">IDE's</h1>
-						<p>The optional static typing of Typescript, as already mentioned before, contributes to great debugging during development.
-							Visual Studio IDE's, WebStorm and many other text editors already handle some tools that improve the experience of
-							a developer when writting TypeScript applications.</p>
+						<div style="display: flex;flex-direction: row">
+							<div style="flex-grow: 1;"><img src="res/vs.png" style="width: 100px"></div>
+							<div style="flex-grow: 1;"><img src="res/vscode.png" style="width: 100px"></div>
+						</div>
+						<div style="display: flex;flex-direction: row; padding-left: 30px">
+							<div style="flex-grow: 1;"><img src="res/eclipse.png" style="width: 100px"></div>
+							<div style="flex-grow: 1;"><img src="res/wbstorm.png" style="width: 200px"></div>
+						</div>
+						<div style="display: flex;flex-direction: row">
+							<div style="flex-grow: 1;"><img src="res/atom.png" style="width: 100px"></div>
+							<div style="flex-grow: 1;"><img src="res/sublime.png" style="width: 100px"></div>
+						</div>
 					</section>
 
 					<section>
 						<h1 style="font-size: 80px">A Widely Known Application Developed With Typescript</h1>
-						<img class="fragment" data-fragment-index="1" class="myImage" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Visual_Studio_Code_0.10.1_icon.png">
+						<img class="fragment" data-fragment-index="1" class="myImage" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Visual_Studio_Code_0.10.1_icon.png" style="height: 300px"">
 					</section>
 				</section>
 			<!--
@@ -993,7 +1137,7 @@ tsc helloworld.ts
 					<section>
 						<h2>Choose a trending open source TypeScript project</h2>
 						<a href="https://github.com/trending/typescript?since=daily">
-							<img class="myImage" src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png">
+							<img class="myImage" src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" style="height: 60%">
 						</a>
 					</section>
 				</section>
@@ -1008,6 +1152,8 @@ tsc helloworld.ts
 				<ul>
 					<li><a href="https://www.typescriptlang.org/">TypeScript oficial page</a></li>
 					<li><a href="http://www.tutorialspoint.com/typescript/">Tutorials Point - TypeScript Tutorial</a></li>
+					<li><a href="http://benchmarksgame.alioth.debian.org/">BenchMarks</a></li>
+					<li><a href="http://www.jsweet.org/wp-content/uploads/2015/11/JSweet-How-does-it-compare-to-TypeScript-Renaud-Pawlak.pdf">JSweet <i>(paper written by Pawlak, Renaud)</i></a></li>
 				</ul>
 			</section>
 			<!--
@@ -1016,7 +1162,7 @@ tsc helloworld.ts
 					*****************************************************
 				-->
 			<section>
-				<h1 style="font-size: 80px">Tutorials and Web Sites concerning the language</h1>
+				<h1 style="font-size: 80px">Tutorials and Websites</h1>
 				<ul>
 					<li><a href="https://www.youtube.com/watch?v=-PR_XqW9JJU">TypeScript Tutorial by Derek Banas</a></li>
 					<li><a href="https://www.typescriptlang.org/">TypeScript oficial page</a></li>
