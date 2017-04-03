@@ -156,7 +156,43 @@ function identity<T>(arg: T): T {
 			<!-- Characteristics -->
 			<!-- Advantages -->
 			<!-- Shortcomes -->
+			<section>
+				<h1>Architectural Overview</h1>
+				<img class="myImage" src="https://raw.githubusercontent.com/wiki/Microsoft/TypeScript/images/architecture.png">
+			</section>
 
+			<section>
+				<h1>Compilation</h1>
+				<img class="myImage" src="http://webmodelling.com/_images/howtos/angular-quickstart-typescript-compilation-flow.png">
+			</section>
+
+			<section>
+				<h1>Types</h1>
+				<span data-markdown>
+						<script type="text/template">
+							* Enum
+							* Any
+							* Void
+							* Null and Undefined
+							* Never
+						</script>
+					</span>
+				<span data-markdown>
+						<script type="text/template">
+							* Boolean
+							* Number
+							* String
+							* Array
+							* Tuple
+						</script>
+					</span>
+				<div data-markdown>
+					<script type="text/template">
+						* Types Assertions
+					</script>
+				</div>
+			</section>
+          
 			<!--
 					*************************************************************
 					*  How does the language fits in the Programming Paradigms  * 
@@ -164,44 +200,491 @@ function identity<T>(arg: T): T {
 				-->
 			<section>
 				<section>
-					<h1>TypeScript</h1><br>
-					<h4>vs</h4>
-					<h1>Programming Paradigms</h1>
+					<h1>Features</h1>
+					<h5>Bear in mind TypeScripts converts to JavaScript</h5>
 				</section>
 
 				<section>
-					<h3>TypeScrypt is a
-						<u>Multi-Paradigm</u> language</h3>
-					<br>
-					<ul>
-						<li>Scripting</li>
-						<li>Object-Oriented</li>
-						<li>Strutured</li>
-						<li>Imperative</li>
-						<li>Functional</li>
-						<li>Generic</li>
-					</ul>
+					<h1>TypeScript 1.1</h1>
 				</section>
 
 				<section>
-					<h2>Scripting</h2>
+					<h2>Protected</h2>
 					<pre><code data-trim data-noescape>
+class Thing {
+  protected doSomething() { /* ... */ }
+}
+
+class MyThing extends Thing {
+  public myMethod() {
+    // OK, can access protected member from subclass
+    this.doSomething();
+  }
+}
+var t = new MyThing();
+t.doSomething(); // Error, cannot call protected member from outside class
+					</code></pre>
+				</section>
+
+				<section>
+					<h1>TypeScript 1.3</h1>
+				</section>
+
+				<section>
+					<h2>Tuple types</h2>
+					<pre><code data-trim data-noescape>
+// Declare a tuple type
+var x: [string, number];
+// Initialize it
+x = ['hello', 10]; // OK
+// Initialize it incorrectly
+x = [10, 'hello']; // Error
+					</code></pre>
+					<p class="fragment" data-fragment-index="1">Also</p>
+					<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
+console.log(x[0].substr(1)); // OK
+console.log(x[1].substr(1)); // Error, 'number' does not have 'substr'
+					</code></pre>
+				</section>
+
+				<section>
+					<h1>TypeScript 1.4</h1>
+				</section>
+
+				<section>
+					<h2>Union types</h2>
+					<pre><code data-trim data-noescape>
+interface RunOptions {
+   program: string;
+   commandline: string[]|string|(() => string);
+}
+					</code></pre>
+					<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
+var opts: RunOptions = /* ... */;
+opts.commandline = '-hello world'; // OK
+opts.commandline = ['-hello', 'world']; // OK
+opts.commandline = [42]; // Error, number is not string or string[]
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Stricter Generics</h2>
+					<pre><code data-trim data-noescape>
+function equal<T>(lhs: T, rhs: T): boolean {
+  return lhs === rhs;
+}
+
+// Previously: No error
+// New behavior: Error, no best common type between 'string' and 'number'
+var e = equal(42, 'hello');
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Better Type Inference</h2>
+					<pre><code data-trim data-noescape>
+var x = [1, 'hello']; // x: Array<string|number>
+x[0] = 'world'; // OK
+x[0] = false; // Error, boolean is not string or number
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Template strings</h2>
+					<pre><code data-trim data-noescape>
+var name = "TypeScript";
+var greeting  = `Hello, ${name}! Your name has ${name.length} characters`;
+					</code></pre>
+					<p class="fragment" data-fragment-index="1">Which compiles to</p>
+					<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
+var name = "TypeScript!";
+var greeting = "Hello, " + name + "! Your name has " + name.length + " characters";
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Type Guards</h2>
+					<h3>typeof</h3>
+					<p>To test variables</p>
+					<pre><code data-trim data-noescape>
+var x: string | HTMLElement = /* ... */;
+if(typeof x === 'string') {
+    // x is string here, as shown above
+}
+else {
+    // x is HTMLElement here
+    console.log(x.innerHTML);
+}
+					</code></pre>
+					<h3 class="fragment" data-fragment-index="1">instanceof</h3>
+					<p class="fragment" data-fragment-index="1">To test classes and union types</p>
+					<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
+class Dog { woof() { } }
+class Cat { meow() { } }
+var pet: Dog|Cat = /* ... */;
+if (pet instanceof Dog) {
+    pet.woof(); // OK
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>let declarations</h3>
+					<h3>const declarations</h3>
+					<h3>const enum declarations</h3>
+				</section>
+
+				<section>
+					<h1>TypeScript 1.5</h1>
+				</section>
+
+				<section>
+					<h2>ES6 Modules</h2>
+				</section>
+
+				<section>
+					<h2>Export Declarations</h2>
+					<pre><code data-trim data-noescape>
+interface Stream { ... }
+function writeToStream(stream: Stream, data: string) { ... }
+export { Stream, writeToStream as write };  // writeToStream exported as write
+					</code></pre>
+					<pre><code data-trim data-noescape>
+import { read, write, standardOutput as stdout } from "./inout";
+var s = read(stdout);
+write(stdout, s);
+					</code></pre>
+					<pre><code data-trim data-noescape>
+import * as io from "./inout";
+var s = io.read(io.standardOutput);
+io.write(io.standardOutput, s);
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>namespace keyword</h2>
+					<pre><code data-trim data-noescape>
+namespace Math {
+    export function add(x, y) { ... }
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>for..of support</h2>
+					<pre><code data-trim data-noescape>
+for (var v of expr) { }
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Decorators</h2>
+					<pre><code data-trim data-noescape>
+function f() {
+    console.log("f(): evaluated");
+    return function (target, propertyKey: string, descriptor: PropertyDescriptor) {
+        console.log("f(): called");
+    }
+}
+
+function g() {
+    console.log("g(): evaluated");
+    return function (target, propertyKey: string, descriptor: PropertyDescriptor) {
+        console.log("g(): called");
+    }
+}
+
+class C {
+    @f()
+    @g()
+    method() {}
+}
+					</code></pre>
+					<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
+f(): evaluated
+g(): evaluated
+g(): called
+f(): called
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Computed properties</h2>
+					<pre><code data-trim data-noescape>
+function makeNode(name: string, initialNeighbor: Node): Node {
+    return {
+        name: name,
+        neighbors: {
+            [initialNeighbor.name]: initialNeighbor
+        }
+    }
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h1>TypeScript 1.6</h1>
+				</section>
+
+				<section>
+					<h2>Abstract classes and methods</h2>
+					<pre><code data-trim data-noescape>
+abstract class Base {
+    abstract getThing(): string;
+    getOtherThing() { return 'hello'; }
+}
+
+let x = new Base(); // Error, 'Base' is abstract
+
+// Error, must either be 'abstract' or implement concrete 'getThing'
+class Derived1 extends Base { }
+
+class Derived2 extends Base {
+    getThing() { return 'hello'; }
+    foo() {
+        super.getThing();// Error: cannot invoke abstract members through 'super'
+    }
+}
+
+var x = new Derived2(); // OK
+var y: Base = new Derived2(); // Also OK
+y.getThing(); // OK
+y.getOtherThing(); // OK
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Improvements on other features</h2>
+				</section>
+
+				<section>
+					<h1>TypeScript 1.7</h1>
+				</section>
+
+				<section>
+					<h2>Async/Await</h2>
+					<pre><code data-trim data-noescape>
+"use strict";
+
+// printDelayed is a 'Promise<void>'
+async function printDelayed(elements: string[]) {
+    for (const element of elements) {
+        await delay(200);
+        console.log(element);
+    }
+}
+
+async function delay(milliseconds: number) {
+    return new Promise<void>(resolve => {
+        setTimeout(resolve, milliseconds);
+    });
+}
+
+printDelayed(["Hello", "beautiful", "asynchronous", "world"]).then(() => {
+    console.log();
+    console.log("Printed every element!");
+});
+					</code></pre>
+				</section>
+			</section>
+			<!--
+					*************************************
+					*  Comparison with close languages  *
+					*************************************
+				-->
+
+				<section>
+					<h1>TypeScript 1.8</h1>
+				</section>
+
+				<section>
+					<h2>Type parameters as constraints</h2>
+					<pre><code data-trim data-noescape>
+function assign<T extends U, U>(target: T, source: U): T {
+    for (let id in source) {
+        target[id] = source[id];
+    }
+    return target;
+}
+
+let x = { a: 1, b: 2, c: 3, d: 4 };
+assign(x, { b: 10, d: 20 });
+assign(x, { e: 0 });  // Error
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Control flow analysis errors</h2>
+					<img class="myImage" src="https://cloud.githubusercontent.com/assets/8052307/5210657/c5ae0f28-7585-11e4-97d8-86169ef2a160.gif">
+				</section>
+
+				<section>
+					<h1>TypeScript 2.0</h1>
+				</section>
+
+				<section>
+					<h2>--strictNullChecks</h2>
+					<pre><code data-trim data-noescape>
+// Compiled with --strictNullChecks
+let x: number;
+let y: number | undefined;
+let z: number | null | undefined;
+x = y = z = 1;  // Ok
+x = undefined;  // Error
+y = z = undefined;  // Ok
+x = null;  // Error
+y = null;  // Error
+z = null;  // Ok
+x = y;  // Error
+x = z;  // Error
+y = x;  // Ok
+y = z;  // Error
+z = x;  // Ok
+z = y;  // Ok
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Private and Protected Constructors</h2>
+					<pre><code data-trim data-noescape>
+class Singleton {
+    private static instance: Singleton;
+
+    private constructor() { }
+
+    static getInstance() {
+        if (!Singleton.instance) {
+            Singleton.instance = new Singleton();
+        }
+        return Singleton.instance;
+    }
+}
+
+let e = new Singleton(); // Error: constructor of 'Singleton' is private.
+let v = Singleton.getInstance();
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Abstract properties and accessors</h2>
+					<pre><code data-trim data-noescape>
+abstract class Base {
+    abstract name: string;
+    abstract get value();
+    abstract set value(v: number);
+}
+
+class Derived extends Base {
+    name = "derived";
+
+    value = 1;
+}
+					</code></pre>
+				</section>
+
+				<section>
+					<h1>TypeScript 2.1</h1>
+				</section>
+
+				<section>
+					<h2>keyof and Lookup Types</h2>
+					<pre><code data-trim data-noescape>
+interface Person {
+    name: string;
+    age: number;
+    location: string;
+}
+
+type K1 = keyof Person; // "name" | "age" | "location"
+type K2 = keyof Person[];  // "length" | "push" | "pop" | "concat" | ...
+type K3 = keyof { [x: string]: Person };  // string
+					</code></pre>
+				</section>
+
+				<section>
+					<h1>TypeScript 2.2</h1>
+				</section>
+
+				<section>
+					<h2>Mix-in classes</h2>
+					<p style="font-size: 0.5em">TypeScript did not have a type that represents the non-primitive type, i.e. any thing that is not number, string, boolean,
+						symbol, null, or undefined.</p>
+					<pre><code data-trim data-noescape>
+declare function create(o: object | null): void;
+
+create({ prop: 0 }); // OK, JSON
+create(null); // OK
+
+create(42); // Error
+create("string"); // Error
+create(false); // Error
+create(undefined); // Error
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>object type</h2>
+					<p style="font-size: 0.5em">TypeScript did not have a type that represents the non-primitive type, i.e. any thing that is not number, string, boolean,
+						symbol, null, or undefined.</p>
+					<pre><code data-trim data-noescape>
+declare function create(o: object | null): void;
+
+create({ prop: 0 }); // OK, JSON
+create(null); // OK
+
+create(42); // Error
+create("string"); // Error
+create(false); // Error
+create(undefined); // Error
+					</code></pre>
+				</section>
+
+			</section>
+
+			<!--
+					*************************************************************
+					*  How does the language fits in the Programming Paradigms  * 
+					*************************************************************
+				-->
+			<section>
+				<h1>TypeScript</h1><br>
+				<h4>vs</h4>
+				<h1>Programming Paradigms</h1>
+			</section>
+
+			<section>
+				<h3>TypeScrypt is a
+					<u>Multi-Paradigm</u> language</h3>
+				<br>
+				<ul>
+					<li>Scripting</li>
+					<li>Object-Oriented</li>
+					<li>Strutured</li>
+					<li>Imperative</li>
+					<li>Functional</li>
+					<li>Generic</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Scripting</h2>
+				<pre><code data-trim data-noescape>
 						var aString: string = "Wow, look at this script";
 						function aFunction(message: string) {
 							console.log(this.genericString);
 						}
 					</code></pre>
-					<ul>
-						<li>Fast to learn and write</li>
-						<li>Simple syntax and semantics</li>
-						<li>Executed from start to finish</li>
-						<li>No explicit entry point (like a main() function)</li>
-					</ul>
-				</section>
+				<ul>
+					<li>Fast to learn and write</li>
+					<li>Simple syntax and semantics</li>
+					<li>Executed from start to finish</li>
+					<li>No explicit entry point (like a main() function)</li>
+				</ul>
+			</section>
 
-				<section>
-					<h2>Object-Oriented</h2>
-					<pre><code data-trim data-noescape>
+			<section>
+				<h2>Object-Oriented</h2>
+				<pre><code data-trim data-noescape>
 class Person {
     private name: string;
     private age: number;
@@ -213,42 +696,41 @@ class Person {
 }
 					</code></pre>
 
-					<p style="font-size: 28px">TypeScript is a <strong><i>class-based</i></strong> language: Objects are running instances of Classes.</p>
-					<p style="font-size: 28px">Concept of "objects", containing fields of data known as <strong>attributes</strong> and dedicated code procedures known
-						as <strong>methods</strong>, that can be accessed or modified with the <strong>"this."</strong> prefix.</p>
-				</section>
+				<p style="font-size: 28px">TypeScript is a <strong><i>class-based</i></strong> language: Objects are running instances of Classes.</p>
+				<p style="font-size: 28px">Concept of "objects", containing fields of data known as <strong>attributes</strong> and dedicated code procedures known
+					as <strong>methods</strong>, that can be accessed or modified with the <strong>"this."</strong> prefix.</p>
+			</section>
 
-				<section>
-					<h2>Strutured & Imperative</h2>
-					<p>Aims to improve code Clarity and Quality as well as the Velocity of development, describing how the program must operate
-						and behave, using</p>
-					<ul>
-						<li>SubRoutines</li>
-						<li>Block Structures</li>
-						<li>For and While-Loops</li>
-					</ul>
-				</section>
+			<section>
+				<h2>Strutured & Imperative</h2>
+				<p>Aims to improve code Clarity and Quality as well as the Velocity of development, describing how the program must operate
+					and behave, using</p>
+				<ul>
+					<li>SubRoutines</li>
+					<li>Block Structures</li>
+					<li>For and While-Loops</li>
+				</ul>
+			</section>
 
-				<section>
-					<h2>Functional</h2>
-					<p>In a mathemetical perspective, calling the same function twice with the same parameters, should output the same result.</p>
-					<pre><code data-trim data-noescape>
+			<section>
+				<h2>Functional</h2>
+				<p>In a mathemetical perspective, calling the same function twice with the same parameters, should output the same result.</p>
+				<pre><code data-trim data-noescape>
 function add(x: number, y: number): number {
     return x + y;
 }
 					</code></pre>
-				</section>
+			</section>
 
-				<section>
-					<h2>Generic</h2>
-					<p>Code is written with types that are to be instantiated later (<i>templates</i>)</p>
-					<pre><code data-trim data-noescape>
+			<section>
+				<h2>Generic</h2>
+				<p>Code is written with types that are to be instantiated later (<i>templates</i>)</p>
+				<pre><code data-trim data-noescape>
 function printArraySize&ltT&gt(arg: Array&ltT&gt): Array&ltT&gt {
     console.log(arg.length); 
     return arg;
 }
 					</code></pre>
-				</section>
 			</section>
 			<!--
 					*************************************
@@ -256,26 +738,27 @@ function printArraySize&ltT&gt(arg: Array&ltT&gt): Array&ltT&gt {
 					*************************************
 				-->
 
-				<section>
-					<h1 style="font-size: 150px">Comparison with close languages</h1>
-				</section>
+			<section>
+				<h1 style="font-size: 150px">Comparison with close languages</h1>
+			</section>
 
-				<section>
-					<h1 style="font-size: 80px">JavaScript...</h1>
-					<p>As we already know, TypeScript is a superset of JavaScript, providing optional static typing, classes and interfaces.</p>
-					<p>It also benefits IDE's to develop a consistent debugging environment.</p>
-					<p>And so, we can point that it is a better choice when developping larger software systems, being deployable where a regular JavaScript application would run.</p>
-				</section>
+			<section>
+				<h1 style="font-size: 80px">JavaScript...</h1>
+				<p>As we already know, TypeScript is a superset of JavaScript, providing optional static typing, classes and interfaces.</p>
+				<p>It also benefits IDE's to develop a consistent debugging environment.</p>
+				<p>And so, we can point that it is a better choice when developping larger software systems, being deployable where a regular
+					JavaScript application would run.</p>
+			</section>
 
-				<section>
-					<h1 style="font-size: 80px">... There is also CoffeeScript...</h1>
-					<p>It focuses on other aspects, providing mainly code readability for developers.</p>
-					<p><strong>However</strong>, TypeScript also provides good readability for tools through its optional static typing.</p>
-				</section>
+			<section>
+				<h1 style="font-size: 80px">... There is also CoffeeScript...</h1>
+				<p>It focuses on other aspects, providing mainly code readability for developers.</p>
+				<p><strong>However</strong>, TypeScript also provides good readability for tools through its optional static typing.</p>
+			</section>
 
-				<section>
-					<h1 style="font-size: 50px">TypeScript</h1>
-					<pre><code style="max-height: 700px">
+			<section>
+				<h1 style="font-size: 50px">TypeScript</h1>
+				<pre><code style="max-height: 700px">
 class User {
  private id: number;
  private firstName: string;
@@ -297,11 +780,11 @@ class User {
  }
 }
 					</code></pre>
-				</section>
+			</section>
 
-				<section>
-					<h1 style="font-size: 50px">CoffeeScript</h1>
-					<pre><code style="max-height: 700px">
+			<section>
+				<h1 style="font-size: 50px">CoffeeScript</h1>
+				<pre><code style="max-height: 700px">
 class User
  constructor (@id, firstName, @lastName) ->
 
@@ -311,12 +794,12 @@ class User
 
  getLastName: -> @lastName
 					</code></pre>
-				</section>
+			</section>
 
-				<section>
-					<h1 style="font-size: 50px">JavaScript</h1>
-					
-					<div id="firstSlide">
+			<section>
+				<h1 style="font-size: 50px">JavaScript</h1>
+
+				<div id="firstSlide">
 					<div>
 						<pre><code style="max-height: 700px">
 function User(id, firstName, lastName) {
@@ -396,6 +879,8 @@ User.prototype = {
 				</section>
 			</div>
 		</div>
+
+	</div>
 
 	<script src="lib/js/head.min.js"></script>
 	<script src="js/reveal.js"></script>
