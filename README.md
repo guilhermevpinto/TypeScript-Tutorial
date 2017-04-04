@@ -5,15 +5,16 @@ You just have to open index.html with your preferred browser and you're good to 
 TypeScript is a simple yet powerful language to use. The following presentation is very brief and does not address all the topics. You should check the [official website](https://www.typescriptlang.org) for more detailed information. Anyway, this presentation is a nice introduction. Have fun and at the end you'll be an expert ;)
 
 The following topics are discussed:
- - Introduction
- - History
- - TypeScript Types
- - Versions' Highlights
- - TypeScript vs Programming Paradigms
- - Current Applications
- - Get Started
- - Bibliographic References
- - Tutorials and Websites
+ - [Introduction](https://guilhermevpinto.github.io/TypeScript-Tutorial/#/)
+ - [History](https://guilhermevpinto.github.io/TypeScript-Tutorial/#/2)
+ - [TypeScript Types](https://guilhermevpinto.github.io/TypeScript-Tutorial/#/3)
+ - [Versions' Highlights](https://guilhermevpinto.github.io/TypeScript-Tutorial/#/4)
+ - [TypeScript vs Programming Paradigms](https://guilhermevpinto.github.io/TypeScript-Tutorial/#/5)
+ - [Comparison with current languages](https://guilhermevpinto.github.io/TypeScript-Tutorial/#/6)
+ - [Current Applications](https://guilhermevpinto.github.io/TypeScript-Tutorial/#/7)
+ - [Get Started](https://guilhermevpinto.github.io/TypeScript-Tutorial/#/8)
+ - [Bibliographic References](https://guilhermevpinto.github.io/TypeScript-Tutorial/#/9)
+ - [Tutorials and Websites](https://guilhermevpinto.github.io/TypeScript-Tutorial/#/10)
 
  You should take around 20 minutes to go through all slides.
 
