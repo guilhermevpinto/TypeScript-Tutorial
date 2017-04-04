@@ -18,6 +18,6 @@ The following topics are discussed:
 
  You should take around 20 minutes to go through all slides.
 
-This presentation is made with [reveal.js](https://github.com/hakimel/reveal.js/). We advise you to use it instaed of the regular Microsoft PowerPoint, LaTeX and Google Slides.
+This presentation is made with [reveal.js](https://github.com/hakimel/reveal.js/). We advise you to use it instead of the regular Microsoft PowerPoint, LaTeX and Google Slides.
 
 Bear in mind this officially presented as of April 2016. This presentation is not currently maintained. However, if you find any mistake, then feel free to point it out!
