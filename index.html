@@ -99,14 +99,14 @@
 				</section>
 
 				<section>
-				<h1 style="font-size: 100px">Architectural Overview</h1>
-				<img class="myImage" src="https://raw.githubusercontent.com/wiki/Microsoft/TypeScript/images/architecture.png">
-			</section>
+					<h1 style="font-size: 100px">Architectural Overview</h1>
+					<img class="myImage" src="https://raw.githubusercontent.com/wiki/Microsoft/TypeScript/images/architecture.png">
+				</section>
 
-			<section>
-				<h1>Compilation</h1>
-				<img class="myImage" src="http://webmodelling.com/_images/howtos/angular-quickstart-typescript-compilation-flow.png" width="80%">
-			</section>
+				<section>
+					<h1>Compilation</h1>
+					<img class="myImage" src="http://webmodelling.com/_images/howtos/angular-quickstart-typescript-compilation-flow.png" width="80%">
+				</section>
 
 			</section>
 
@@ -252,7 +252,7 @@ interface RunOptions {
    commandline: string[]|string|(() => string);
 }
 				</code></pre>
-				<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
+					<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
 var opts: RunOptions = /* ... */;
 opts.commandline = '-hello world'; // OK
 opts.commandline = ['-hello', 'world']; // OK
@@ -280,26 +280,26 @@ var x = [1, 'hello']; // x: Array<string|number>
 x[0] = 'world'; // OK
 x[0] = false; // Error, boolean is not string or number
 						</code></pre>
-					</section>
+				</section>
 
-					<section>
-						<h2>Template strings</h2>
-						<pre><code data-trim data-noescape>
+				<section>
+					<h2>Template strings</h2>
+					<pre><code data-trim data-noescape>
 var name = "TypeScript";
 var greeting  = `Hello, ${name}! Your name has ${name.length} characters`;
 						</code></pre>
-						<p class="fragment" data-fragment-index="1">Which compiles to</p>
-						<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
+					<p class="fragment" data-fragment-index="1">Which compiles to</p>
+					<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
 var name = "TypeScript!";
 var greeting = "Hello, " + name + "! Your name has " + name.length + " characters";
 						</code></pre>
-					</section>
+				</section>
 
-					<section>
-						<h2>Type Guards</h2>
-						<h3>typeof</h3>
-						<p>To test variables</p>
-						<pre><code data-trim data-noescape>
+				<section>
+					<h2>Type Guards</h2>
+					<h3>typeof</h3>
+					<p>To test variables</p>
+					<pre><code data-trim data-noescape>
 var x: string | HTMLElement = /* ... */;
 if(typeof x === 'string') {
     // x is string here, as shown above
@@ -309,12 +309,12 @@ else {
     console.log(x.innerHTML);
 }
 						</code></pre>
-					</section>
+				</section>
 
-					<section>	
-						<h3 class="fragment" data-fragment-index="1">instanceof</h3>
-						<p class="fragment" data-fragment-index="1">To test classes and union types</p>
-						<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
+				<section>
+					<h3 class="fragment" data-fragment-index="1">instanceof</h3>
+					<p class="fragment" data-fragment-index="1">To test classes and union types</p>
+					<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
 class Dog { woof() { } }
 class Cat { meow() { } }
 var pet: Dog|Cat = /* ... */;
@@ -322,60 +322,60 @@ if (pet instanceof Dog) {
     pet.woof(); // OK
 }
 						</code></pre>
-					</section>
+				</section>
 
-					<section>
-						<h3>let declarations</h3>
-						<h3>const declarations</h3>
-						<h3>const enum declarations</h3>
-					</section>
+				<section>
+					<h3>let declarations</h3>
+					<h3>const declarations</h3>
+					<h3>const enum declarations</h3>
+				</section>
 
-					<section data-transition="concave">
-						<h1>TypeScript 1.5</h1>
-					</section>
+				<section data-transition="concave">
+					<h1>TypeScript 1.5</h1>
+				</section>
 
-					<section>
-						<h2>ES6 Modules</h2>
-					</section>
+				<section>
+					<h2>ES6 Modules</h2>
+				</section>
 
-					<section>
-						<h2>Export Declarations</h2>
-						<pre><code data-trim data-noescape>
+				<section>
+					<h2>Export Declarations</h2>
+					<pre><code data-trim data-noescape>
 interface Stream { ... }
 function writeToStream(stream: Stream, data: string) { ... }
 export { Stream, writeToStream as write };  // writeToStream exported as write
 						</code></pre>
-						<pre><code data-trim data-noescape>
+					<pre><code data-trim data-noescape>
 import { read, write, standardOutput as stdout } from "./inout";
 var s = read(stdout);
 write(stdout, s);
 						</code></pre>
-						<pre><code data-trim data-noescape>
+					<pre><code data-trim data-noescape>
 import * as io from "./inout";
 var s = io.read(io.standardOutput);
 io.write(io.standardOutput, s);
 						</code></pre>
-					</section>
+				</section>
 
-					<section>
-						<h2>namespace keyword</h2>
-						<pre><code data-trim data-noescape>
+				<section>
+					<h2>namespace keyword</h2>
+					<pre><code data-trim data-noescape>
 namespace Math {
     export function add(x, y) { ... }
 }
 						</code></pre>
-					</section>
+				</section>
 
-					<section>
-						<h2>for..of support</h2>
-						<pre><code data-trim data-noescape>
+				<section>
+					<h2>for..of support</h2>
+					<pre><code data-trim data-noescape>
 for (var v of expr) { }
 						</code></pre>
-					</section>
+				</section>
 
-					<section>
-						<h2>Decorators</h2>
-						<pre><code data-trim data-noescape>
+				<section>
+					<h2>Decorators</h2>
+					<pre><code data-trim data-noescape>
 function f() {
     console.log("f(): evaluated");
     return function (target, propertyKey: string, descriptor: PropertyDescriptor) {
@@ -396,17 +396,17 @@ class C {
     method() {}
 }
 						</code></pre>
-						<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
+					<pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
 f(): evaluated
 g(): evaluated
 g(): called
 f(): called
 						</code></pre>
-					</section>
+				</section>
 
-					<section>
-						<h2>Computed properties</h2>
-						<pre><code data-trim data-noescape>
+				<section>
+					<h2>Computed properties</h2>
+					<pre><code data-trim data-noescape>
 function makeNode(name: string, initialNeighbor: Node): Node {
     return {
         name: name,
@@ -635,7 +635,7 @@ create(undefined); // Error
 					*  How does the language fits in the Programming Paradigms  * 
 					*************************************************************
 			-->
-				<section data-transition="zoom">
+			<section data-transition="zoom">
 				<section>
 					<h1>TypeScript</h1><br>
 					<h4>vs</h4>
@@ -735,12 +735,14 @@ function printArraySize&ltT&gt(arg: Array&ltT&gt): Array&ltT&gt {
 					<h1 style="font-size: 150px">Comparison with close languages</h1>
 				</section>
 
-				<section  data-transition="concave">
+				<section data-transition="concave">
 					<h1 style="font-size: 80px">JavaScript...</h1>
 					<div id="slide">
 						<div>
-							<p>As we already know, TypeScript is a superset of JavaScript, providing <span class="fragment">optional static typing</span><span class="fragment">, classes</span><span class="fragment"> and interfaces.</span></p>
-						</div>	
+							<p>As we already know, TypeScript is a superset of JavaScript, providing <span class="fragment">optional static typing</span>
+								<span
+								 class="fragment">, classes</span><span class="fragment"> and interfaces.</span></p>
+						</div>
 						<div id="image">
 							<img src="res/js.png" style="width: 650px; margin-top: 0px">
 						</div>
@@ -759,22 +761,22 @@ function printArraySize&ltT&gt(arg: Array&ltT&gt): Array&ltT&gt {
 				</section>
 
 				<section>
-					<p>And so, we can conclude that it is a better choice when developping larger software systems, being deployable where a regular
-						JavaScript application would run.</p>
-						<img src="res/memeJS.jpg">
+					<p>And so, we can conclude that it is a better choice when developping larger software systems, being deployable where
+						a regular JavaScript application would run.</p>
+					<img src="res/memeJS.jpg">
 				</section>
 
 				<section data-transition="concave">
 					<h1 style="font-size: 80px">... There is also CoffeeScript...</h1>
 					<div id="slide">
-							<div>
-								<p>It focuses on other aspects, providing mainly code readability for developers.</p>
-								<p class="fragment"><strong>However</strong>, TypeScript also provides good readability for tools through its optional static typing.</p>
-							</div>	
-							<div id="image">
-								<img src="res/coffeelogo.png" style="width: 650px; margin-top: 0px">
-							</div>
+						<div>
+							<p>It focuses on other aspects, providing mainly code readability for developers.</p>
+							<p class="fragment"><strong>However</strong>, TypeScript also provides good readability for tools through its optional static typing.</p>
 						</div>
+						<div id="image">
+							<img src="res/coffeelogo.png" style="width: 650px; margin-top: 0px">
+						</div>
+					</div>
 				</section>
 
 				<section>
@@ -919,7 +921,7 @@ class Spacecraft {
 						<div style="flex-grow: 1;"><img src="res/microsoft.png" style="width: 250px"></div>
 						<div style="flex-grow: 1;"><img src="res/googleFull.png" style="width: 200px"></div>
 					</div>
-					
+
 				</section>
 
 				<section data-transiction="concave">
@@ -1048,105 +1050,144 @@ class Spacecraft {
 			<!-- Angular2 > Ionic2 -->
 			<!-- JetBrains, Visual Studio -->
 			<!-- https://www.typescriptlang.org/community/friends.html -->
-				<section data-transition="zoom">
-					<section>
-						<h1>Where it has been used?</h1>
-						<h3>Typical applications</h3>
-					</section>
-
-					<section>
-						<h1 style="font-size: 80px">Frameworks</h1>
-						<p>Core language of Angular 2, a complete new Angular, better <strong>structured</strong>, considers <strong>mobile
-							development</strong>and <strong>increases <i>performance </i></strong>on both applications execution and development speed.</p>
-						<div style="display: flex;flex-direction: row">
-							<div style="flex-grow: 1;"><img src="res/angular.png" style="width: 160px"></div>
-							<div style="flex-grow: 1;"><img src="res/ionic.png" style="padding-top:50px; width: 200px"></div>
-						</div>
-					</section>
-
-					<section>
-						<h1 style="font-size: 80px">A Widely Known Application Developed With Typescript</h1>
-						<img class="fragment" data-fragment-index="1" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Visual_Studio_Code_0.10.1_icon.png" style="height: 300px">
-					</section>
-
-					<section>
-						<h2>Another Great Example</h2>
-						<h1 style="font-size: 80px">JSWEET</h1>
-						<img data-fragment-index="1" class="myImage" src="res/jsweetFull.svg">
-					</section>
-
-					<section>
-						<h1 style="font-size: 80px">IDE's</h1>
-						<div style="display: flex;flex-direction: row">
-							<div style="flex-grow: 1;"><img src="res/vs.png" style="width: 100px"></div>
-							<div style="flex-grow: 1;"><img src="res/vscode.png" style="width: 100px"></div>
-						</div>
-						<div style="display: flex;flex-direction: row; padding-left: 30px">
-							<div style="flex-grow: 1;"><img src="res/eclipse.png" style="width: 100px"></div>
-							<div style="flex-grow: 1;"><img src="res/wbstorm.png" style="width: 200px"></div>
-						</div>
-						<div style="display: flex;flex-direction: row">
-							<div style="flex-grow: 1;"><img src="res/atom.png" style="width: 100px"></div>
-							<div style="flex-grow: 1;"><img src="res/sublime.png" style="width: 100px"></div>
-						</div>
-					</section>
+			<section data-transition="zoom">
+				<section>
+					<h1>Where it has been used?</h1>
+					<h3>Typical applications</h3>
 				</section>
+
+				<section>
+					<h1 style="font-size: 80px">Frameworks</h1>
+					<p>Core language of Angular 2, a complete new Angular, better <strong>structured</strong>, considers <strong>mobile
+							development</strong>and <strong>increases <i>performance </i></strong>on both applications execution and development
+						speed.</p>
+					<div style="display: flex;flex-direction: row">
+						<div style="flex-grow: 1;"><img src="res/angular.png" style="width: 160px"></div>
+						<div style="flex-grow: 1;"><img src="res/ionic.png" style="padding-top:50px; width: 200px"></div>
+					</div>
+				</section>
+
+				<section>
+					<h1 style="font-size: 80px">A Widely Known Application Developed With Typescript</h1>
+					<img class="fragment" data-fragment-index="1" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Visual_Studio_Code_0.10.1_icon.png"
+					 style="height: 300px">
+				</section>
+
+				<section>
+					<h2>Another Great Example</h2>
+					<h1 style="font-size: 80px">JSWEET</h1>
+					<img data-fragment-index="1" class="myImage" src="res/jsweetFull.svg">
+				</section>
+
+				<section>
+					<h1 style="font-size: 80px">IDE's</h1>
+					<div style="display: flex;flex-direction: row">
+						<div style="flex-grow: 1;">
+							<a href="https://www.visualstudio.com"><img src="res/vs.png" style="width: 100px"></a>
+						</div>
+						<div style="flex-grow: 1;">
+							<a href="https://code.visualstudio.com"><img src="res/vscode.png" style="width: 100px"></a>
+						</div>
+					</div>
+					<div style="display: flex;flex-direction: row; padding-left: 30px">
+						<div style="flex-grow: 1;">
+							<a href="https://eclipse.org"><img src="res/eclipse.png" style="width: 100px"></a>
+						</div>
+						<div style="flex-grow: 1;">
+							<a href="https://www.jetbrains.com/webstorm/"><img src="res/wbstorm.png" style="width: 200px"></a>
+						</div>
+					</div>
+					<div style="display: flex;flex-direction: row">
+						<div style="flex-grow: 1;">
+							<a href="https://atom.io"><img src="res/atom.png" style="width: 100px"></a>
+						</div>
+						<div style="flex-grow: 1;">
+							<a href="https://www.sublimetext.com"><img src="res/sublime.png" style="width: 100px"></a>
+						</div>
+					</div>
+				</section>
+			</section>
 			<!--
 					*****************
 					*  Get Started  *
 					*****************
 				-->
-				<section data-transition="zoom">
-					<section>
-						<h1>Get Started</h1>
-						<h3>You know have the full knowledge to do awesome work</h3>
-					</section>
+			<section data-transition="zoom">
+				<section>
+					<h1>Get Started</h1>
+					<h3>You know have the full knowledge to do awesome work</h3>
+				</section>
 
-					<section>
-						<h2>First try online</h2>
-						<a href="https://www.typescriptlang.org/play/">
-							<img class="myImage" src="https://www.tutorialspoint.com/typescript/images/typescript_online_test.jpg" width="80%">
-						</a>
-					</section>
+				<section>
+					<h2>First try online</h2>
+					<a href="https://www.typescriptlang.org/play/">
+						<img class="myImage" src="https://www.tutorialspoint.com/typescript/images/typescript_online_test.jpg" width="80%">
+					</a>
+				</section>
 
-					<section>
-						<h2>Download and Install</h2>
-						<a href="https://nodejs.org">
-							<img class="myImage" src="http://thisdavej.com/wp-content/uploads/2016/02/nodejs-logo.png" width="80%">
-						</a>
-					</section>
+				<section>
+					<h2>Download and Install</h2>
+					<a href="https://nodejs.org">
+						<img class="myImage" src="http://thisdavej.com/wp-content/uploads/2016/02/nodejs-logo.png" width="80%">
+					</a>
+				</section>
 
-					<section>
-						<h2>Install TypeScript</h2>
-						<pre><code style="max-height: 700px">
+				<section>
+					<h2>Install TypeScript</h2>
+					<pre><code style="max-height: 700px">
 npm install -g typescript
 							</code></pre>
-					</section>
+				</section>
 
-					<section>
-						<h2>Grab a sweet code editor</h2>
-						<img class="myImage" src="res/CodeEditors.png" style="width: 700px">
-						<p>We recommend <a href="https://code.visualstudio.com">Visual Studio Code</a></p>
-					</section>
+				<section>
+					<h2>Grab a sweet code editor</h2>
+					<div style="display: flex;flex-direction: row">
+						<div style="flex-grow: 1;">
+							<a href="https://www.sublimetext.com"><img src="res/sublime.png" style="width: 100px"></a>
+						</div>
+						<div style="flex-grow: 1;">
+							<a href="https://www.gnu.org/software/emacs/"><img src="https://www.gnu.org/software/emacs/images/emacs.png" style="width: 100px"></a>
+						</div>
+					</div>
+					<div style="display: flex;flex-direction: row; padding-left: 30px">
+						<div style="flex-grow: 1;">
+							<a href="https://atom.io"><img src="res/atom.png" style="width: 100px"></a>
+						</div>
+						<div style="flex-grow: 1;">
+							<a href="https://www.jetbrains.com/webstorm/"><img src="res/wbstorm.png" style="width: 200px"></a>
+						</div>
+					</div>
+					<div style="display: flex;flex-direction: row">
+						<div style="flex-grow: 1;">
+							<a href="https://eclipse.org"><img src="res/eclipse.png" style="width: 100px"></a>
+						</div>
+						<div style="flex-grow: 1;">
+							<a href="http://www.vim.org"><img src="http://www.unixstickers.com/image/data/stickers/vim/vim.sh.png" style="width: 100px"></a>
+						</div>
+					</div>
+					<div style="flex-grow: 1;">
+						<a href="https://code.visualstudio.com"><img src="res/vscode.png" style="width: 100px"></a>
+					</div>
+				</section>
 
-					<section>
-						<h2><a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html">Compile TypeScript</a></h2>
-						<pre><code style="max-height: 700px">
+				<section>
+					<h2><a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html">Compile TypeScript</a></h2>
+					<pre><code style="max-height: 700px">
 tsc helloworld.ts
 							</code></pre>
-					</section>
-
-					<section>
-						<img class="myImage" src="http://www.virtualspeechcoach.com/wp-content/uploads/2013/09/Keep-Calm-Expert.jpg" style="width: 500px">
-					</section>
-
-					<section>
-						<h2>Choose a trending open source TypeScript project</h2>
-						<a href="https://github.com/trending/typescript?since=daily">
-							<img class="myImage" src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" style="width: 500px">
-						</a>
-					</section>
 				</section>
+
+				<section>
+					<img class="myImage" src="http://www.virtualspeechcoach.com/wp-content/uploads/2013/09/Keep-Calm-Expert.jpg" style="width: 500px">
+				</section>
+
+				<section>
+					<h2>Choose a trending open source TypeScript project</h2>
+					<a href="https://github.com/trending/typescript?since=daily">
+						<img class="myImage" src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" style="width: 500px">
+					</a>
+				</section>
+			</section>
 
 			<!--
 					*************************************************
@@ -1185,6 +1226,24 @@ tsc helloworld.ts
 
 			<section>
 				<img class="myImage" src="https://img.memesuper.com/d3f9187dbf1947eacc397bb8bcc59d56_sooooo-any-questions-any-questions-memes_632-651.png">
+			</section>
+
+			<section>
+				<img class="myImage" src="https://img.memesuper.com/d3f9187dbf1947eacc397bb8bcc59d56_sooooo-any-questions-any-questions-memes_632-651.png">
+			</section>
+
+			<section data-transition="zoom">
+				<h1>Thanks!</h1>
+				<div>
+					<span style="display: inline; margin-right: 2em;">
+					<img style="width: 300px;" src="res/antonio.jpg">
+				</span>
+					<span style="display: inline;">
+					<img style="width: 300px;" src="res/guilherme.jpg">
+				</span>
+				</div>
+				<h4 style="display: inline; margin-right: 4em;">António Ramadas</h4>
+				<h4 style="display: inline;">Guilherme Pinto</h4>
 			</section>
 
 		</div>
